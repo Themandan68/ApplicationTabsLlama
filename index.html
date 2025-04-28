@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Tab App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="tab-container">
+        <button class="tab-button active" onclick="openTab(event, 'tic-tac-toe')">Tic-Tac-Toe</button>
+        <button class="tab-button" onclick="openTab(event, 'notes')">Notes</button>
+        <button class="tab-button" onclick="openTab(event, 'calculator')">Calculator</button>
+    </div>
+
+    <div id="tic-tac-toe" class="tab-content active">
+        <div class="game-board">
+            <div class="row">
+                <div class="cell" id="cell-0"></div>
+                <div class="cell" id="cell-1"></div>
+                <div class="cell" id="cell-2"></div>
+            </div>
+            <div class="row">
+                <div class="cell" id="cell-3"></div>
+                <div class="cell" id="cell-4"></div>
+                <div class="cell" id="cell-5"></div>
+            </div>
+            <div class="row">
+                <div class="cell" id="cell-6"></div>
+                <div class="cell" id="cell-7"></div>
+                <div class="cell" id="cell-8"></div>
+            </div>
+        </div>
+        <div id="game-result"></div>
+        <button id="restart-button">Restart</button>
+    </div>
+
+    <div id="notes" class="tab-content">
+        <button id="new-note-button">New Note</button>
+        <div id="notes-container"></div>
+    </div>
+
+    <div id="calculator" class="tab-content">
+        <input type="text" id="display" disabled>
+        <div class="calculator-buttons">
+            <button class="number-button" onclick="appendNumber(7)">7</button>
+            <button class="number-button" onclick="appendNumber(8)">8</button>
+            <button class="number-button" onclick="appendNumber(9)">9</button>
+            <button class="operator-button" onclick="appendOperator('/')">/</button>
+            <button class="number-button" onclick="appendNumber(4)">4</button>
+            <button class="number-button" onclick="appendNumber(5)">5</button>
+            <button class="number-button" onclick="appendNumber(6)">6</button>
+            <button class="operator-button" onclick="appendOperator('*')">*</button>
+            <button class="number-button" onclick="appendNumber(1)">1</button>
+            <button class="number-button" onclick="appendNumber(2)">2</button>
+            <button class="number-button" onclick="appendNumber(3)">3</button>
+            <button class="operator-button" onclick="appendOperator('-')">-</button>
+            <button class="number-button" onclick="appendNumber(0)">0</button>
+            <button class="operator-button" onclick="appendOperator('.')">.</button>
+            <button class="operator-button" onclick="calculate()">=</button>
+            <button class="operator-button" onclick="appendOperator('+')">+</button>
+            <button class="operator-button" onclick="appendOperator('sqrt')">√</button>
+            <button class="operator-button" onclick="appendOperator('^')">^</button>
+            <button class="operator-button" onclick="clearDisplay()">C</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
